@@ -16,7 +16,7 @@ ALLOWED = {'README.md', '.github/ISSUE_TEMPLATE/bug_report.yml', '.github/ISSUE_
            '.githooks/pre-commit', '.githooks/pre-push'}
 LIMIT = 1024 * 1024
 SECRET = re.compile(r'-{5}BEGIN (?:[A-Z ]*PRIVATE KEY)-{5}|gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{40,}|(?:AKIA|ASIA)[A-Z0-9]{16}')
-PRIVATE_PATH = re.compile('/' + r'Users/[^\s/]+/|/' + r'home/[^\s/]+/|[A-Za-z]:\\' + r'Users\\[^\s\\]+\\')
+PRIVATE_PATH = re.compile('/' + r'Users/[^\s/]+|/' + r'home/[^\s/]+|[A-Za-z]:[\\/]' + r'Users[\\/][^\s\\/]+')
 MINISIGN = ' '.join(['minisign', 'secret', 'key'])
 
 def secret_content(text):
