@@ -1,0 +1,88 @@
+{
+  "name": "问题报告",
+  "description": "报告可以复现的扫描、清理或界面问题。",
+  "title": "[问题] ",
+  "body": [
+    {
+      "type": "markdown",
+      "attributes": {
+        "value": "请勿提交密码、令牌、私钥、私人文件、完整扫描台账或未经审查的日志；请移除用户名、个人路径和机密内容。"
+      }
+    },
+    {
+      "type": "input",
+      "id": "version",
+      "attributes": {
+        "label": "应用版本"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "input",
+      "id": "macos",
+      "attributes": {
+        "label": "macOS 版本"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "dropdown",
+      "id": "chip",
+      "attributes": {
+        "label": "Mac 芯片",
+        "options": [
+          "Apple 芯片",
+          "Intel 芯片",
+          "不确定"
+        ]
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "summary",
+      "attributes": {
+        "label": "发生了什么？"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "steps",
+      "attributes": {
+        "label": "复现步骤"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "expected",
+      "attributes": {
+        "label": "预期结果"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "diagnostics",
+      "attributes": {
+        "label": "截图或已脱敏诊断"
+      },
+      "validations": {
+        "required": false
+      }
+    }
+  ]
+}
