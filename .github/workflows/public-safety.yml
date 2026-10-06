@@ -1,0 +1,30 @@
+{
+  "name": "公开发布隐私门禁",
+  "on": {
+    "push": {},
+    "pull_request": {},
+    "workflow_dispatch": {}
+  },
+  "permissions": {
+    "contents": "read"
+  },
+  "jobs": {
+    "public-safety": {
+      "runs-on": "ubuntu-latest",
+      "steps": [
+        {
+          "name": "读取公开仓库",
+          "uses": "actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "with": {
+            "fetch-depth": 0,
+            "persist-credentials": false
+          }
+        },
+        {
+          "name": "检查工作区与 Git 历史",
+          "run": "python3 .github/scripts/public_guard.py --tree .\npython3 .github/scripts/public_guard.py --history"
+        }
+      ]
+    }
+  }
+}
