@@ -1,0 +1,3 @@
+#!/bin/sh
+# 扫描全部本地可达历史；已经删除的源码也不能随历史传出。
+exec python3 .github/scripts/public_guard.py --history
