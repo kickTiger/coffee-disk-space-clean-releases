@@ -19,6 +19,10 @@ SECRET = re.compile(r'-{5}BEGIN (?:[A-Z ]*PRIVATE KEY)-{5}|gh[pousr]_[A-Za-z0-9]
 PRIVATE_PATH = re.compile('/' + r'Users/[^\s/]+|/' + r'home/[^\s/]+|[A-Za-z]:[\\/]' + r'Users[\\/][^\s\\/]+')
 MINISIGN = ' '.join(['minisign', 'secret', 'key'])
 
+class QuietParser(argparse.ArgumentParser):
+    def error(self, message):
+        self.exit(2, '公开发布门禁拒绝：参数无效。\n')
+
 def secret_content(text):
     return bool(SECRET.search(text) or MINISIGN in text.lower())
 
@@ -116,7 +120,7 @@ def git_files(commit=None):
     return files
 
 def main():
-    parser = argparse.ArgumentParser(description='公开发布仓库文件与隐私门禁')
+    parser = QuietParser(description='公开发布仓库文件与隐私门禁')
     modes = parser.add_mutually_exclusive_group(required=True)
     modes.add_argument('--tree')
     modes.add_argument('--index', action='store_true')
