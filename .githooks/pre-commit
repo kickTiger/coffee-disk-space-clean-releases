@@ -1,0 +1,3 @@
+#!/bin/sh
+# 检查完整暂存区，不依赖工作区文件是否干净。
+exec python3 .github/scripts/public_guard.py --index
