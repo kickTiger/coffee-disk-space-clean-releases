@@ -1,0 +1,121 @@
+{
+  "name": "安装或更新失败",
+  "description": "报告下载、安装、重启或更新检查失败。",
+  "title": "[更新] ",
+  "body": [
+    {
+      "type": "markdown",
+      "attributes": {
+        "value": "请勿提交密码、令牌、私钥、私人文件、完整扫描台账或未经审查的日志；请移除用户名、个人路径和机密内容。"
+      }
+    },
+    {
+      "type": "input",
+      "id": "version",
+      "attributes": {
+        "label": "应用版本"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "input",
+      "id": "macos",
+      "attributes": {
+        "label": "macOS 版本"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "dropdown",
+      "id": "chip",
+      "attributes": {
+        "label": "Mac 芯片",
+        "options": [
+          "Apple 芯片",
+          "Intel 芯片",
+          "不确定"
+        ]
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "input",
+      "id": "target_version",
+      "attributes": {
+        "label": "目标版本"
+      },
+      "validations": {
+        "required": false
+      }
+    },
+    {
+      "type": "dropdown",
+      "id": "stage",
+      "attributes": {
+        "label": "出错阶段",
+        "options": [
+          "检查更新",
+          "下载更新",
+          "安装更新",
+          "更新后重启",
+          "手动安装 DMG",
+          "不确定"
+        ]
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "dropdown",
+      "id": "proxy",
+      "attributes": {
+        "label": "系统代理设置",
+        "options": [
+          "开启",
+          "关闭",
+          "不确定"
+        ]
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "message",
+      "attributes": {
+        "label": "错误提示"
+      },
+      "validations": {
+        "required": false
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "steps",
+      "attributes": {
+        "label": "出错前的操作"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "recovery",
+      "attributes": {
+        "label": "是否尝试重新检查、手动安装，以及能否启动应用？"
+      },
+      "validations": {
+        "required": false
+      }
+    }
+  ]
+}
